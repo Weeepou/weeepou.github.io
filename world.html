@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Svět | Santh</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">Santh</a>
+            <nav class="nav-menu">
+                <a href="index.html" class="nav-link">Domů</a>
+                <a href="timeline.html" class="nav-link">Časová osa</a>
+                <a href="characters.html" class="nav-link">Postavy</a>
+                <a href="lore.html" class="nav-link active">Lore</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="page-content">
+        <section class="container">
+            <h1>Svět Eldorie</h1>
+            <div class="grid grid-2">
+                <div class="card" onclick="openModal('Region', 'Severní Državy', 'Hory', 'Země věčného sněhu a trpasličích pevností.')">
+                    <h3>Severní Državy</h3>
+                    <p class="text-accent">Region</p>
+                </div>
+                <div class="card" onclick="openModal('Region', 'Jižní souostroví', 'Ostrovy', 'Domov pirátů a exotického koření.')">
+                    <h3>Jižní souostroví</h3>
+                    <p class="text-accent">Region</p>
+                </div>
+            </div>
+            <div style="text-align: center; margin-top: var(--space-m);">
+                <a href="lore.html" class="nav-link" style="display: inline-block;">Zpět na Lore</a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Modal Shared Structure -->
+    <div id="modal" class="modal-overlay">
+        <div class="modal-window" onclick="event.stopPropagation()">
+            <header class="modal-header">
+                <div>
+                    <p id="modal-type" class="text-accent" style="text-transform: uppercase; font-size: 12px; font-weight: bold;"></p>
+                    <h2 id="modal-title">Název</h2>
+                    <p id="modal-meta" class="text-muted"></p>
+                </div>
+                <button class="modal-close" onclick="closeModal()">&times;</button>
+            </header>
+            <div id="modal-body" style="border-top: 1px solid var(--clr-border); padding-top: var(--space-s);">
+                <p id="modal-desc"></p>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer container">
+        <p>&copy; 2026 Santh | Studentský projekt pro D&D</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>

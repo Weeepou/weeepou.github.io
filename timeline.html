@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Časová osa | Santh</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">Santh</a>
+            <nav class="nav-menu">
+                <a href="index.html" class="nav-link">Domů</a>
+                <a href="timeline.html" class="nav-link active">Časová osa</a>
+                <a href="characters.html" class="nav-link">Postavy</a>
+                <a href="lore.html" class="nav-link">Lore</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="page-content">
+        <section class="container">
+            <h1>Kronika událostí</h1>
+            <div class="timeline">
+                <div class="timeline-item" onclick="openModal('Session 1', 'První setkání', '10. 1. 2026', 'Družina se sešla v hostinci U Zlomeného šípu...')">
+                    <p class="text-accent"><strong>Session 1: První setkání</strong></p>
+                    <p class="text-muted">10. 1. 2026</p>
+                    <p>Založení skupiny a první společný kontrakt.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Modal Shared Structure -->
+    <div id="modal" class="modal-overlay">
+        <div class="modal-window" onclick="event.stopPropagation()">
+            <header class="modal-header">
+                <div>
+                    <p id="modal-type" class="text-accent" style="text-transform: uppercase; font-size: 12px; font-weight: bold;"></p>
+                    <h2 id="modal-title">Název</h2>
+                    <p id="modal-meta" class="text-muted"></p>
+                </div>
+                <button class="modal-close" onclick="closeModal()">&times;</button>
+            </header>
+            <div id="modal-body" style="border-top: 1px solid var(--clr-border); padding-top: var(--space-s);">
+                <p id="modal-desc"></p>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer container">
+        <p>&copy; 2026 Santh | Studentský projekt pro D&D</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
