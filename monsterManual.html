@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Svět | Santh</title>
+    <title>Postavy | Santh</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -14,7 +14,7 @@
                 <a href="index.html" class="nav-link">Home</a>
                 <a href="timeline.html" class="nav-link">Timeline</a>
                 <a href="characters.html" class="nav-link">Characters</a>
-                <a href="monsterManual.html" class="nav-link">Monster Manual</a>
+                <a href="monsterManual.html" class="nav-link active">Monster Manual</a>
                 <a href="lore.html" class="nav-link">Lore</a>
             </nav>
         </div>
@@ -22,17 +22,28 @@
 
     <main class="page-content">
         <section class="container">
-            <h1>Svět Eldorie</h1>
-            <div class="grid grid-2">
-                <div class="card" onclick="openModal('Region', 'Severní Državy', 'Hory', 'Země věčného sněhu a trpasličích pevností.')">
-                    <h3>Severní Državy</h3>
-                    <p class="text-accent">Region</p>
+            <h1>Monstra</h1>
+            <div class="grid grid-4 mb-m" style="margin-bottom: var(--space-m);">
+                <div class="card" onclick="openModal('Monstrum', 'Skeleton', 'Undead', 'radiant hurt, necrotic not hurt')">
+                    <h3>Skeleton</h3>
+                    <p class="text-accent">Undead</p>
                 </div>
-                <div class="card" onclick="openModal('Region', 'Jižní souostroví', 'Ostrovy', 'Domov pirátů a exotického koření.')">
-                    <h3>Jižní souostroví</h3>
-                    <p class="text-accent">Region</p>
+                
+                <div class="card" onclick="openModal('Monstrum', 'Big carnivorous plant', 'Plant', 'ham?')">
+                    <h3>Big carnivorous plant</h3>
+                    <p class="text-accent">Plant</p>
                 </div>
-            </div>        
+                
+                <div class="card" onclick="openModal('Monstrum', 'Troll/Ogre?', 'Giant', 'Fire hurt')">
+                    <h3>Troll/Ogre?</h3>
+                    <p class="text-accent">Giant</p>
+                </div>
+
+                <div class="card" onclick="openModal('Monstrum', 'Sběh', 'Aberration', 'Screeech?')">
+                    <h3>Sběh</h3>
+                    <p class="text-accent">Aberration</p>
+                </div>
+            </div>
         </section>
     </main>
 
