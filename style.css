@@ -73,11 +73,6 @@ h1 { text-align: center; margin-top: var(--space-m); }
     gap: var(--space-m);
 }
 
-@media (min-width: 640px) { .grid-2 { grid-template-columns: repeat(2, 1fr); } }
-@media (min-width: 1024px) { 
-    .grid-3 { grid-template-columns: repeat(3, 1fr); }
-    .grid-4 { grid-template-columns: repeat(4, 1fr); }
-}
 
 section { padding: 0 0 var(--space-l) 0; }
 main { flex: 1; }
@@ -237,7 +232,10 @@ main { flex: 1; }
     border-radius: var(--radius);
     border: 1px solid var(--clr-border);
     overflow-y: auto;
-    padding: var(--space-m);
+    /* Přidej toto: */
+    overflow-x: hidden; 
+    padding: var(--space-m);    
+    box-sizing: border-box; /* Zajistí, že padding nezvětší šířku nad 100% */
 }
 
 .modal-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: var(--space-m); }
@@ -253,6 +251,23 @@ main { flex: 1; }
 #modal-body {
     border-top: 1px solid var(--clr-border);
     padding-top: var(--space-s);
+}
+
+#modal-body img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+#modal-body p, #modal-body h1, #modal-body h2 {
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    word-break: break-word; /* Rozlomí extrémně dlouhá slova */
+}
+
+/* Pokud v modálu používáš grid, musí být na mobilu pod sebou */
+#modal-body .grid {
+    grid-template-columns: 1fr !important;
 }
 
 /* --- 5. UTILITY CLASSES --- */
@@ -276,4 +291,10 @@ main { flex: 1; }
     border-top: 1px solid var(--clr-border);
     color: var(--clr-text-muted);
     font-size: var(--fs-small);
+}
+
+@media (min-width: 640px) { .grid-2 { grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 1024px) { 
+    .grid-3 { grid-template-columns: repeat(3, 1fr); }
+    .grid-4 { grid-template-columns: repeat(4, 1fr); }
 }
