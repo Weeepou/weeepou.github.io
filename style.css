@@ -59,7 +59,6 @@ h1 { text-align: center; margin-top: var(--space-m); }
     width: 100%;
 }
 
-/* FIXED: Replaced absolute positioning with Flexbox for responsiveness */
 .loreContainer {
     display: flex;
     flex-direction: column;
@@ -109,7 +108,6 @@ main { flex: 1; }
     text-decoration: none;
 }
 
-/* UPDATED: Nav structure to use list */
 .nav-menu ul {
     display: flex;
     gap: var(--space-s);
@@ -132,13 +130,11 @@ main { flex: 1; }
     color: white;
 }
 
-/* Accessibility: Keyboard focus state */
 .nav-link:focus, .card:focus {
     outline: 2px solid var(--clr-accent);
     outline-offset: 4px;
 }
 
-/* Hero Component */
 .hero {
     padding: var(--space-l) 0;
     text-align: center;
@@ -171,6 +167,13 @@ main { flex: 1; }
     background-color: #243147;
 }
 
+/* Modifikátor pro statickou kartu (např. disclaimer) */
+.card--static {
+    max-width: 900px;
+    margin: 0 auto;
+    cursor: default;
+}
+
 .timeline {
     position: relative;
     padding-left: var(--space-m);
@@ -200,7 +203,7 @@ main { flex: 1; }
     border-radius: 50%;
 }
 
-/* Modal Styles */
+/* Modal Styles - vylepšené o třídy pro vnitřní prvky */
 .modal-overlay {
     position: fixed;
     top: 0;
@@ -232,6 +235,23 @@ main { flex: 1; }
 
 .modal-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: var(--space-m); }
 .modal-close { background: none; border: none; color: var(--clr-text-muted); font-size: 2rem; cursor: pointer; }
+
+/* Styly pro vnitřek modálu, které byly dříve inline */
+#modal-type {
+    text-transform: uppercase;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+#modal-body {
+    border-top: 1px solid var(--clr-border);
+    padding-top: var(--space-s);
+}
+
+/* --- 5. UTILITY CLASSES --- */
+.u-text-center { text-align: center; }
+.u-mb-m { margin-bottom: var(--space-m); }
+.u-mt-l { margin-top: var(--space-l); }
 
 .text-accent { color: var(--clr-accent); }
 .text-muted { color: var(--clr-text-muted); }

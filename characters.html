@@ -26,19 +26,19 @@
         <section class="container">
             <h1>PC</h1>
             <div class="grid grid-4 mb-m" style="margin-bottom: var(--space-m);">
-                <div class="card" onclick="openModal('Postava', 'Charles &quot;Karel Jitřenka&quot; Morningstar', 'Člověk | Paladin', 'Paladin oddaný Plamenu.')">
+                <div class="card" onclick="openModal('', 'Charles &quot;Karel Jitřenka&quot; Morningstar', 'Člověk | Paladin', 'Paladin oddaný Plamenu.')">
                     <h3>Charles "Karel Jitřenka" Morningstar</h3>
                     <p class="text-accent">Human | Oath of Conquest? Paladin</p>
                 </div>
-                <div class="card" onclick="openModal('Postava', 'Maxmilian &quot;Max&quot; Belledon', 'Human | Ranger', 'TBD')">
+                <div class="card" onclick="openModal('', 'Maxmilian &quot;Max&quot; Belledon', 'Human | Ranger', 'TBD')">
                     <h3>Maxmilian "Max" Belledon</h3>
                     <p class="text-accent">Human | Horizon Walker? Ranger</p>
                 </div>
-                <div class="card" onclick="openModal('Postava', 'Rob Pierre', 'TieflingBard', 'Bard z ulice, který se snaží uniknout své minulosti.')">
+                <div class="card" onclick="openModal('', 'Rob Pierre', 'Tiefling | Bard', 'Bard z ulice, který se snaží uniknout své minulosti.')">
                     <h3>Rob Pierre</h3>
                     <p class="text-accent">Tiefling | College of Glamour Bard</p>
                 </div>
-                <div class="card" onclick="openModal('Postava', 'Salamandrius &quot;Sal&quot; Ben-Adair', 'Elf | Wizard', 'Wizard z Moonhallu.')">
+                <div class="card" onclick="openModal('', 'Salamandrius &quot;Sal&quot; Ben-Adair', 'Elf | Wizard', 'Wizard z Moonhallu.')">
                     <h3>Salamandrius "Sal" Ben-Adair</h3>
                     <p class="text-accent">Elf | Evoker? Wizard</p>
                 </div>
@@ -95,7 +95,7 @@
                     <p class="text-accent">Human | ???</p>
                 </div>
 
-                <div class="card" onclick="openModal('NPC', 'Vyn Vaier', 'Human | Fighter', 'Tbd')">
+                <div class="card" onclick="openModal('NPC', 'Jean Tallien', 'Human | Fighter', 'Tbd')">
                     <h3>Jean Tallien</h3>
                     <p class="text-accent">Human | Fighter</p>
                 </div>
@@ -108,18 +108,17 @@
         </section>
     </main>
 
-    <!-- Modal Shared Structure -->
-    <div id="modal" class="modal-overlay">
+        <div id="modal" class="modal-overlay">
         <div class="modal-window" onclick="event.stopPropagation()">
             <header class="modal-header">
                 <div>
-                    <p id="modal-type" class="text-accent" style="text-transform: uppercase; font-size: 12px; font-weight: bold;"></p>
+                    <p id="modal-type" class="text-accent"></p>
                     <h2 id="modal-title">Název</h2>
                     <p id="modal-meta" class="text-muted"></p>
                 </div>
                 <button class="modal-close" onclick="closeModal()">&times;</button>
             </header>
-            <div id="modal-body" style="border-top: 1px solid var(--clr-border); padding-top: var(--space-s);">
+            <div id="modal-body">
                 <p id="modal-desc"></p>
             </div>
         </div>
