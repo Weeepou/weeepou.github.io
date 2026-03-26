@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Document</title>
+    <style>
+        /* Document Backdrop */
+        body {
+            background-color: #d1d5db; /* Light gray background like a word processor workspace */
+            margin: 0;
+            padding: 40px 20px;
+            font-family: "Times New Roman", Times, Baskerville, Georgia, serif;
+            display: flex;
+            justify-content: center;
+        }
+
+        /* The "Paper" Sheet */
+        .page {
+            background-color: white;
+            width: 100%;
+            max-width: 800px; /* Standard page width */
+            min-height: 1056px; /* Roughly 11 inches */
+            padding: 72px; /* Standard 1-inch margins */
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            box-sizing: border-box;
+            color: #000;
+        }
+
+        h1 {
+            font-size: 24pt;
+            margin-top: 0;
+            margin-bottom: 12pt;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        p {
+            font-size: 12pt;
+            line-height: 1.5;
+            margin-bottom: 12pt;
+            text-align: justify;
+        }
+
+        .image-container {
+            margin: 24pt 0;
+            text-align: center;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            border: 1px solid #ccc;
+            padding: 4px;
+        }
+
+        .caption {
+            font-size: 10pt;
+            font-style: italic;
+            color: #444;
+            margin-top: 8pt;
+        }
+
+        /* Responsive adjustments for mobile screens */
+        @media (max-width: 600px) {
+            body {
+                padding: 10px;
+                background-color: white;
+            }
+            .page {
+                padding: 20px;
+                box-shadow: none;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="page">
+        <h1>Document Title</h1>
+        
+        <p>
+            This document is formatted to resemble a standard word processor file. 
+            It utilizes a serif font, specific page margins, and a subtle box shadow to 
+            simulate a physical piece of paper resting on a digital desktop.
+        </p>
+
+        <div class="image-container">
+            <img 
+                src="https://images.unsplash.com/photo-1472214103451-9374bd1c798e?auto=format&fit=crop&w=800&q=80" 
+                alt="Landscape View"
+            >
+            <div class="caption">Figure 1: A sample landscape image centered within the document.</div>
+        </div>
+
+        <p>
+            You can edit this text directly or add more paragraphs to see how they flow 
+            within the page boundaries. The layout is designed to remain centered on 
+            desktop screens while scaling gracefully for mobile devices.
+        </p>
+    </div>
+
+</body>
+</html>
