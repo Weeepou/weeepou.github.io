@@ -42,7 +42,8 @@ body {
     overflow-x: hidden;
     display: flex;
     flex-direction: column;
-    min-height: 100vh;
+    height: auto;
+    min-height: unset;
 }
 
 img {
@@ -63,14 +64,14 @@ h1 { text-align: center; margin-top: var(--space-xs); }
 p {
     font-size: 12pt;
     line-height: 1.5;
-    margin-bottom: var(--space-m);
+    margin-bottom: var(--space-s);
     text-indent: 20px;
     text-align: justify;
 }
 
 /* --- 3. LAYOUT --- */
 .image-container {
-    margin: var(--space-m) 0;
+    margin: var(--space-xs) 0;
     text-align: center;
 }
 
@@ -136,12 +137,11 @@ main { flex: 1; }
 .page {
     background-color: var(--clr-white);
     padding: var(--space-l);
-    box-shadow: 0 4px 15px var(--shadow);
     box-sizing: border-box;
     max-width: 800px; /* Standard page width */
     min-height: 1056px; /* Roughly 11 inches */
 /*    padding: 72px; /* Standard 1-inch margins */
-    margin: var(--space-l) auto;
+    margin: var(--space-s) auto;
     color: var(--clr-black);
 }
 

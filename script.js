@@ -1,41 +1,25 @@
-/**
- * Otevře modální okno se zadaným obsahem.
- * Podporuje innerHTML pro formátovaný text.
- */
-function openModal(type, title, meta, desc) {
+async function openModalFromFile(type, title, meta, filePath) {
     const modal = document.getElementById('modal');
-    if (!modal) return;
+    const modalBody = document.getElementById('modal-body');
+    
+    if (!modal || !modalBody) return;
 
     document.getElementById('modal-type').innerText = type;
     document.getElementById('modal-title').innerText = title;
     document.getElementById('modal-meta').innerText = meta;
-    document.getElementById('modal-desc').innerHTML = desc;
+
+    // Inject the iframe with an onload event to calculate height
+    modalBody.innerHTML = `
+        <iframe 
+            src="${filePath}" 
+            id="session-iframe"
+            style="width: 100%; border: none; overflow: hidden;"
+            onload="this.style.height = this.contentWindow.document.body.scrollHeight + 'px';"
+            title="${title}">
+        </iframe>`;
     
     modal.classList.add('open');
     document.body.style.overflow = 'hidden';
-}
-
-/**
- * Načte obsah z externího souboru a zobrazí jej v modálu.
- * Umožňuje mít zápisy v samostatných souborech (.txt nebo .html).
- * Důležité: Pro fungování v prohlížeči je obvykle nutné mít spuštěný lokální server (např. Live Server).
- */
-async function openModalFromFile(type, title, meta, filePath) {
-    // Předběžné otevření modálu s informací o načítání
-    openModal(type, title, meta, "<i>Načítám obsah zápisu...</i>");
-
-    try {
-        const response = await fetch(filePath);
-        if (!response.ok) throw new Error('Soubor se nepodařilo nalézt.');
-        
-        const text = await response.text();
-        
-        // Jakmile je text stažen, aktualizujeme obsah modálu
-        document.getElementById('modal-desc').innerHTML = text;
-    } catch (error) {
-        document.getElementById('modal-desc').innerHTML = "<span style='color: #ef4444;'>Chyba: Nepodařilo se načíst externí soubor. Ujistěte se, že cesta k souboru je správná.</span>";
-        console.error('Chyba při načítání souboru:', error);
-    }
 }
 
 /**

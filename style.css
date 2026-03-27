@@ -205,6 +205,18 @@ main { flex: 1; }
     border-radius: 50%;
 }
 
+img {
+    max-width: 100%;
+    height: auto;
+    border: 1px solid #ccc;
+    padding: 4px;
+}
+
+.image-container {
+    margin: var(--space-s) 0;
+    text-align: center;
+}
+
 /* Modal Styles - vylepšené o třídy pro vnitřní prvky */
 .modal-overlay {
     position: fixed;
@@ -227,19 +239,27 @@ main { flex: 1; }
 
 .modal-window {
     background-color: var(--clr-surface);
-    width: min(90%, 800px);
-    max-height: 85vh;
+    width: min(95%, 1024px);
+    max-height: 90vh; /* Keeps the modal within the viewport */
     border-radius: var(--radius);
-    border: 1px solid var(--clr-border);
-    overflow-y: auto;
-    /* Přidej toto: */
-    overflow-x: hidden; 
-    padding: var(--space-m);    
-    box-sizing: border-box; /* Zajistí, že padding nezvětší šířku nad 100% */
+    overflow-y: auto; /* Enable scrolling on the modal window itself */
+    display: block;   /* Remove flexbox so elements stack naturally */
+    padding: 0;
 }
 
-.modal-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: var(--space-m); }
-.modal-close { background: none; border: none; color: var(--clr-text-muted); font-size: 2rem; cursor: pointer; }
+.modal-header {
+    padding: var(--space-m);
+    background-color: var(--clr-surface);
+    border-bottom: 1px solid var(--clr-border);
+    /* No 'position: sticky' here, so it scrolls away */
+}
+
+.modal-close {
+    background: none;
+    border: none;
+    color: var(--clr-text-muted);
+    font-size: 2rem; cursor: pointer;
+}
 
 /* Styly pro vnitřek modálu, které byly dříve inline */
 #modal-type {
@@ -249,8 +269,15 @@ main { flex: 1; }
 }
 
 #modal-body {
-    border-top: 1px solid var(--clr-border);
-    padding-top: var(--space-s);
+    width: 100%;
+    height: auto; /* Let it expand based on the iframe height */
+}
+
+#modal-body iframe {
+    width: 100%;
+    border: none;
+    display: block;
+    overflow: hidden; /* Prevent the iframe from having its own scrollbar */
 }
 
 #modal-body img {
