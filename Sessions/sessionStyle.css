@@ -70,7 +70,7 @@ p {
 
 /* --- 3. LAYOUT --- */
 .image-container {
-    margin: 24pt 0;
+    margin: var(--space-xs) 0;
     text-align: center;
 }
 
