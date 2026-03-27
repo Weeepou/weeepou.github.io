@@ -13,6 +13,7 @@ async function openModalFromFile(type, title, meta, filePath) {
         <iframe 
             src="${filePath}" 
             id="session-iframe"
+            scrolling="no"
             style="width: 100%; border: none; overflow: hidden;"
             onload="this.style.height = this.contentWindow.document.body.scrollHeight + 'px';"
             title="${title}">
