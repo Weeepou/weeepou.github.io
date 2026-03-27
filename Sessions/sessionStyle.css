@@ -50,6 +50,7 @@ img {
     height: auto;
     border: 1px solid #ccc;
     padding: 4px;
+    margin: 4px;
 }
 
 h1, h2, h3 {
