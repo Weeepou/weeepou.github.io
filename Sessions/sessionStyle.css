@@ -22,10 +22,9 @@
     --fs-lg: 2rem;
     --fs-xl: 3.5rem;
 
-    --radius-sm: 3px;
-    --radius-md: 6px;
-    --radius-lg: 9px;
     --radius: 12px;
+    --radius-md: 24px;
+    --radius-lg: 36px;
     
     --shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.5);
     --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -164,18 +163,6 @@ main { flex: 1; }
     color: var(--clr-black);
 }
 
-/* The "Paper" Sheet 
-        .page {
-            background-color: white;
-            width: 100%;
-            max-width: 800px; /* Standard page width 
-            min-height: 1056px; /* Roughly 11 inches 
-            padding: 72px; /* Standard 1-inch margins 
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-            box-sizing: border-box;
-            color: #000;
-        } */
-
 .footer {
     padding: var(--space-m) 0;
     text-align: center;
@@ -192,12 +179,11 @@ main { flex: 1; }
 .LVL-UP {
     background-color: var(--clr-primary-dark);
     color: var(--clr-accent);
-    padding: var(--space-s);
-    border-radius: var(--radius);
+    border-radius: var(--radius-md);
     text-align: center;
     font-weight: bold;
     font-size: var(--fs-md);
-    margin-top: var(--space-s);
+    margin-top: var(--space-xs);
 }
 
 .shortRest {
@@ -215,9 +201,8 @@ main { flex: 1; }
 .longRest {
     background-color: var(--clr-surface);
     color: var(--clr-primary);
-    padding: var(--space-xs);
-    padding-block: initial;
     border-radius: var(--radius);
+    text-indent: 0;
     text-align: center;
     font-weight: bold;
     font-size: var(--fs-small);
