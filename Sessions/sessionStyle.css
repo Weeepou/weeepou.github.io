@@ -171,6 +171,12 @@ main { flex: 1; }
     font-size: var(--fs-small);
 }
 
+.place {
+    font-weight: bold;
+    text-indent: 0;
+    margin-bottom: 0;
+}
+
 .DM {
     border-radius: var(--radius);
     font-style: italic;
