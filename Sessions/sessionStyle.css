@@ -10,6 +10,7 @@
     --clr-border: #334155;
     --clr-white: #ffffff;
     --clr-black: #000000;
+    --clr-red: #a10a0a;
     
     --space-xs: 0.5rem;
     --space-s: 1rem;
@@ -207,6 +208,17 @@ main { flex: 1; }
 .longRest {
     background-color: var(--clr-surface);
     color: var(--clr-primary);
+    border-radius: var(--radius);
+    text-indent: 0;
+    text-align: center;
+    font-weight: bold;
+    font-size: var(--fs-small);
+    margin-top: var(--space-xs);
+}
+
+.fight {
+    background-color: var(--clr-red);
+    color: var(--clr-black);
     border-radius: var(--radius);
     text-indent: 0;
     text-align: center;
