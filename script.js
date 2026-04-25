@@ -1,4 +1,4 @@
-async function openModalFromFile(type, title, meta, filePath) {
+/*async function openModalFromFile(type, title, meta, filePath) {
     const modal = document.getElementById('modal');
     const modalBody = document.getElementById('modal-body');
     
@@ -23,9 +23,9 @@ async function openModalFromFile(type, title, meta, filePath) {
     document.body.style.overflow = 'hidden';
 }
 
-/**
- * Zavře modální okno.
- */
+
+// * Zavře modální okno.
+ 
 function closeModal() {
     const modal = document.getElementById('modal');
     if (!modal) return;
@@ -47,4 +47,58 @@ document.addEventListener('DOMContentLoaded', () => {
             if (e.target === modal) closeModal();
         });
     }
-});
+});*/
+
+/********************* Sidebar instead of Modal ***********************************/
+
+/**
+ * Toggles the sidebar visibility.
+ */
+function toggleSidebar() {
+    const wrapper = document.getElementById('layout-wrapper');
+    if (wrapper) {
+        wrapper.classList.toggle('sidebar-hidden');
+    }
+}
+
+/**
+ * Loads a session file into the content panel.
+ */
+function loadSession(element, type, title, meta, filePath) {
+    const placeholder = document.getElementById('content-placeholder');
+    const viewer = document.getElementById('session-viewer');
+    const viewBody = document.getElementById('view-body');
+    
+    if (!placeholder || !viewer || !viewBody) return;
+
+    // 1. Update Active State
+    document.querySelectorAll('.timeline-item').forEach(item => {
+        item.classList.remove('active');
+    });
+    element.classList.add('active');
+
+    // 2. Show Viewer
+    placeholder.style.display = 'none';
+    viewer.style.display = 'flex';
+
+    // 3. Set Header Text
+    document.getElementById('view-type').innerText = type;
+    document.getElementById('view-title').innerText = title;
+    document.getElementById('view-meta').innerText = meta;
+
+    // 4. Load Content Iframe
+    viewBody.innerHTML = `
+        <iframe 
+            src="${filePath}" 
+            id="session-iframe"
+            title="${title}">
+        </iframe>`;
+
+    // 5. Auto-close on small screens
+    if (window.innerWidth <= 768) {
+        const wrapper = document.getElementById('layout-wrapper');
+        if (wrapper && !wrapper.classList.contains('sidebar-hidden')) {
+            wrapper.classList.add('sidebar-hidden');
+        }
+    }
+}
