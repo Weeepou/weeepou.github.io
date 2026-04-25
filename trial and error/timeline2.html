@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Časová osa | Santh</title>
+    <link rel="stylesheet" href="gemini.css">
+</head>
+<body id="main-body">
+    <header class="header">
+        <a href="index.html" class="logo">Santh</a>
+        <nav class="nav-menu">
+            <ul>
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="timeline.html" class="nav-link active">Timeline</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="layout-container" id="layout-wrapper">
+        <button class="toggle-btn reveal-btn" onclick="toggleSidebar()" title="Show Sidebar">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+        </button>
+
+        <aside class="timeline-sidebar">
+            <div class="sidebar-header">
+                <h1>Kronika Santh</h1>
+                <button class="toggle-btn" onclick="toggleSidebar()" title="Hide Sidebar">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+                </button>
+            </div>
+            
+            <div class="sidebar-content">
+                <div class="timeline" id="timeline-list">
+                    <div class="timeline-item" onclick="loadSession(this, 'Session 1', 'Neřvi, nebo zařveš', '06. 09. 2025', 'Sessions/session01.html')">
+                        <p class="text-accent"><strong>Session 1: Neřvi, nebo zařveš</strong></p>
+                        <p class="text-muted">06. 09. 2025</p>
+                        <p class="item-summary">První dojmy</p>
+                    </div>
+                    <div class="timeline-item" onclick="loadSession(this, 'Session 2', 'Pupík přichází na scénu', '13. 09. 2025', 'Sessions/session02.html')">
+                        <p class="text-accent"><strong>Session 2: Pupík přichází na scénu</strong></p>
+                        <p class="text-muted">13. 09. 2025</p>
+                        <p class="item-summary">Text TBD</p>
+                    </div>
+                    <div class="timeline-item" onclick="loadSession(this, 'Session 3', 'TBD', '22. 09. 2025', 'Sessions/session03.html')">
+                        <p class="text-accent"><strong>Session 3: TBD</strong></p>
+                        <p class="text-muted">22. 09. 2025</p>
+                        <p class="item-summary">TBD</p>
+                    </div>
+                    <div class="timeline-item" onclick="loadSession(this, 'Session 5', 'Modrá značí tieflinga', '25. 10. 2025', 'Sessions/session05.html')">
+                        <p class="text-accent"><strong>Session 5: Modrá značí tieflinga</strong></p>
+                        <p class="text-muted">25. 10. 2025</p>
+                        <p class="item-summary">Likvidace hladového přerostlého plevele</p>
+                    </div>
+                    <div class="timeline-item" onclick="loadSession(this, 'Session 10', 'Karel Jitřenka', '21. 12. 2025', 'Sessions/session10.html')">
+                        <p class="text-accent"><strong>Session 10: Karel Jitřenka</strong></p>
+                        <p class="text-muted">21. 12. 2025</p>
+                        <p class="item-summary">První seznámení s Helvardem</p>
+                    </div>
+                    <div class="timeline-item" onclick="loadSession(this, 'Session 20', 'Rozloučení', '29. 03. 2026', 'Sessions/session20.html')">
+                        <p class="text-accent"><strong>Session 20: Rozloučení</strong></p>
+                        <p class="text-muted">29. 03. 2026</p>
+                        <p class="item-summary">Rozloučení s Charlesem</p>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <section class="content-panel" id="content-panel">
+            <div id="content-placeholder">
+                <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" style="margin-bottom: 1rem; opacity: 0.5;"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
+                <p>Vyberte session z kroniky pro zobrazení detailů.</p>
+            </div>
+
+            <div id="session-viewer" style="display: none;">
+                <header class="content-header visible">
+                    <p id="view-type" class="text-accent"></p>
+                    <h2 id="view-title" style="margin: 0.5rem 0;">Název</h2>
+                    <p id="view-meta" class="text-muted"></p>
+                </header>
+                <div id="view-body">
+                    <!-- Iframe will be injected here -->
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
