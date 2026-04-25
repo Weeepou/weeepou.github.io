@@ -164,6 +164,7 @@ main { flex: 1; }
     color: var(--clr-black);
 }
 
+/*Done**/
 .footer {
     padding: var(--space-m) 0;
     text-align: center;
